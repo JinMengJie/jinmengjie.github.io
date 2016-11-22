@@ -7,12 +7,23 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>Hello World | Jin</title>
+    <title>启动优化 | Jin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Jinmengjie">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+    <meta name="description" content="[TOC]
+前端性能优化
+
+加载优化
+
+
+资源加载过程是最为耗时的过程，可能会占到总耗时的80%时间。并发请求数限制
+
+首屏优化
+研究表明用户最满意的网页打开时间在2s以内。
+
+首屏时间，就是指用户在没有滚动时候看到的内容渲染完成并且可以交互的时间。至于加载时间，则是整个页面滚动到底部，所有内容加载">
     
     
     
@@ -74,15 +85,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/08/30/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2016/11/20/201611/" title="启动优化" itemprop="url">启动优化</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://weibo.com/1832012112" title="Jinmengjie">Jinmengjie</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-08-30T08:07:01.000Z" itemprop="datePublished">2016-08-30</time>
-    更新日期:<time datetime="2016-10-27T01:32:01.000Z" itemprop="dateModified">2016-10-27</time>
+    <time datetime="2016-11-20T06:00:45.000Z" itemprop="datePublished">2016-11-20</time>
+    更新日期:<time datetime="2016-11-22T08:20:42.000Z" itemprop="dateModified">2016-11-22</time>
     
   </p>
 </header>
@@ -91,32 +102,63 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前端性能优化"><span class="toc-number">1.</span> <span class="toc-text">前端性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#首屏优化"><span class="toc-number">1.1.</span> <span class="toc-text">首屏优化</span></a></li></ol></li></ol>
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy
-</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+		<p>[TOC]</p>
+<h4 id="前端性能优化"><a href="#前端性能优化" class="headerlink" title="前端性能优化"></a>前端性能优化</h4><p><img src="../images/1.png" alt="前端性能优化总结"></p>
+<ul>
+<li>加载优化</li>
+</ul>
+<blockquote>
+<p>资源加载过程是最为耗时的过程，可能会占到总耗时的80%时间。并发请求数限制</p>
+</blockquote>
+<h5 id="首屏优化"><a href="#首屏优化" class="headerlink" title="首屏优化"></a>首屏优化</h5><blockquote>
+<p>研究表明用户最满意的网页打开时间在2s以内。</p>
+</blockquote>
+<p><em>首屏时间，就是指用户在没有滚动时候看到的内容渲染完成并且可以交互的时间。至于加载时间，则是整个页面滚动到底部，所有内容加载完毕并可交互的时间。</em></p>
+<p><strong>如何获取首屏时间？</strong></p>
+<ul>
+<li>加载完静态资源后通过ajax请求去后台获取数据，数据回来后渲染内容</li>
+</ul>
+<p><img src="../images/4.png!web" alt="加载完静态资源后通过ajax请求去后台获取数据，数据回来后渲染内容"></p>
+<blockquote>
+<p>首屏时间 = 点8 – 点1</p>
+</blockquote>
+<ul>
+<li>使用后台直出，返回的html已经带上内容了</li>
+</ul>
+<p><img src="../images/5.png!web" alt="使用后台直出，返回的html已经带上内容了"></p>
+<blockquote>
+<p>首屏时间 = 点4 – 点1。</p>
+</blockquote>
+<p><strong>首屏加载如何优化呢？</strong></p>
+<ul>
+<li>传统旧的加载模式</li>
+</ul>
+<p><img src="../images/2.jpg" alt="传统旧模式加载"></p>
+<ul>
+<li>首屏优先加载渲染模式</li>
+</ul>
+<p><img src="../images/3.jpg" alt="首屏优先加载渲染模式"></p>
+<blockquote>
+<p>一、首屏数据拉取逻辑置于顶部，二、首屏渲染css及js逻辑优先内联HTML，三、次屏逻辑延后处理和执行。</p>
+</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/性能/">性能</a>
+  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://weibo.com/1832012112/2016/08/30/hello-world/" data-title="Hello World | Jin" data-tsina="null" class="share clearfix">
+  <div data-url="http://weibo.com/1832012112/2016/11/20/201611/" data-title="启动优化 | Jin" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -125,14 +167,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/10/26/arguments/" title="JavaScript arguments 对象详解">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  JavaScript arguments 对象详解</span>
+
+<div class="next">
+<a href="/2016/10/26/arguments/"  title="JavaScript arguments 对象详解">
+ <strong>NEXT:</strong><br/> 
+ <span>JavaScript arguments 对象详解
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -143,7 +185,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前端性能优化"><span class="toc-number">1.</span> <span class="toc-text">前端性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#首屏优化"><span class="toc-number">1.1.</span> <span class="toc-text">首屏优化</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
