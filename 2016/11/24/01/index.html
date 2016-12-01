@@ -7,23 +7,16 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>启动优化 | Jin</title>
+    <title>JavaScript知识点总结（一） | Jin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Jinmengjie">
     
-    <meta name="description" content="[TOC]
-前端性能优化
-
-加载优化
-
-
-资源加载过程是最为耗时的过程，可能会占到总耗时的80%时间。并发请求数限制
-
-首屏优化
-研究表明用户最满意的网页打开时间在2s以内。
-
-首屏时间，就是指用户在没有滚动时候看到的内容渲染完成并且可以交互的时间。至于加载时间，则是整个页面滚动到底部，所有内容加载">
+    <meta name="description" content="作用域传统的类C语言,它们的作用域是block-level scope，块级作用域，花括号就是一个作用域.但是对于JavaScript而言，它的作用域是function-level scope.
+var x = 1;
+console.log(x);
+if (true) {
+    var x = 2">
     
     
     
@@ -85,15 +78,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/11/20/201611/" title="启动优化" itemprop="url">启动优化</a>
+      <a href="/2016/11/24/01/" title="JavaScript知识点总结（一）" itemprop="url">JavaScript知识点总结（一）</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://weibo.com/1832012112" title="Jinmengjie">Jinmengjie</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-11-20T06:00:45.000Z" itemprop="datePublished">2016-11-20</time>
-    更新日期:<time datetime="2016-11-24T02:35:03.000Z" itemprop="dateModified">2016-11-24</time>
+    <time datetime="2016-11-24T06:35:53.000Z" itemprop="datePublished">2016-11-24</time>
+    更新日期:<time datetime="2016-11-25T03:02:15.000Z" itemprop="dateModified">2016-11-25</time>
     
   </p>
 </header>
@@ -102,55 +95,119 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
-		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前端性能优化"><span class="toc-number">1.</span> <span class="toc-text">前端性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#首屏优化"><span class="toc-number">1.1.</span> <span class="toc-text">首屏优化</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#作用域"><span class="toc-number">1.</span> <span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量对象"><span class="toc-number">2.</span> <span class="toc-text">变量对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包"><span class="toc-number">3.</span> <span class="toc-text">闭包</span></a></li></ol>
 		</div>
 		
-		<p>[TOC]</p>
-<h4 id="前端性能优化"><a href="#前端性能优化" class="headerlink" title="前端性能优化"></a>前端性能优化</h4><p><img src="/images/1.png" alt="前端性能优化总结"></p>
+		<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><p>传统的类C语言,它们的作用域是block-level scope，块级作用域，花括号就是一个作用域.但是对于JavaScript而言，它的作用域是function-level scope.</p>
+<pre><code class="javascript">var x = 1;
+console.log(x);
+if (true) {
+    var x = 2;
+    console.log(x);
+}
+console.log(x);
+//1
+//2
+//2
+</code></pre>
+<p>JavaScript如何实现block-level scope？</p>
+<pre><code class="javascript">// 通过自执行函数创建临时作用域
+function foo() {
+    var x = 1;
+    if (x) {
+        (function () {
+            var x = 2;
+            // some other code
+            console.log(x); // 2
+        }());
+    }
+    console.log(x);  // x is still 1.
+}
+
+foo();
+</code></pre>
+<p>作用域提升</p>
 <ul>
-<li>加载优化</li>
+<li>变量被提升<br>对JavaScript解释器而言，所有的函数和变量声明都会被提升到最前面, 并且变量声明永远在前面，赋值在声明过程之后</li>
 </ul>
+<pre><code class="javascript">var x = 10;
+function x(){};
+console.log(x); // 10
+</code></pre>
+<p>时间编译器执行过程：</p>
+<pre><code class="javascript">var x;
+function x(){};
+x = 10;
+console.log(x); // 10
+</code></pre>
+<ul>
+<li>函数被提升</li>
+</ul>
+<pre><code class="javascript">// 声明式
+function foo() {}
+// 变量式
+var foo = function(){}
+</code></pre>
 <blockquote>
-<p>资源加载过程是最为耗时的过程，可能会占到总耗时的80%时间。并发请求数限制</p>
+<p>函数的声明的两种方式：声明式和变量式。声明式会自动将声明放在前面并且执行赋值过程。而变量式则是先将声明提升，然后到赋值处再执行赋值。</p>
 </blockquote>
-<h5 id="首屏优化"><a href="#首屏优化" class="headerlink" title="首屏优化"></a>首屏优化</h5><blockquote>
-<p>研究表明用户最满意的网页打开时间在2s以内。</p>
-</blockquote>
-<p><em>首屏时间，就是指用户在没有滚动时候看到的内容渲染完成并且可以交互的时间。至于加载时间，则是整个页面滚动到底部，所有内容加载完毕并可交互的时间。</em></p>
-<p><strong>如何获取首屏时间？</strong></p>
+<pre><code class="javascript">function test() {
+    foo(); // TypeError &quot;foo is not a function&quot;
+    bar(); // &quot;this will run!&quot;
+    var foo = function () { // function expression assigned to local variable &#39;foo&#39;
+        alert(&quot;this won&#39;t run!&quot;);
+    }
+    function bar() { // function declaration, given the name &#39;bar&#39;
+        alert(&quot;this will run!&quot;);
+    }
+}
+test();
+</code></pre>
+<p>另一个例子：</p>
+<pre><code class="javascript">function test() {
+    var foo;
+    var bar;
+    bar = function () { // function declaration, given the name &#39;bar&#39;
+        alert(&quot;this will run!&quot;);
+    }
+    foo(); // TypeError &quot;foo is not a function&quot;
+    bar(); // &quot;this will run!&quot;
+    foo = function () { // function expression assigned to local variable &#39;foo&#39;
+        alert(&quot;this won&#39;t run!&quot;);
+    }
+}
+test();
+</code></pre>
+<p>带有命名的函数变量式声明，是不会提升到作用域范围内的</p>
+<pre><code class="javascript">var baz = function spam() {};
+baz(); // vaild
+spam(); // ReferenceError &quot;spam is not defined&quot;
+</code></pre>
+<h3 id="变量对象"><a href="#变量对象" class="headerlink" title="变量对象"></a>变量对象</h3><p>JavaScript的基本类型</p>
+<pre><code class="javascript">number
+string
+boolean
+undefined
+null
+
+object
+</code></pre>
+<p>变量分为两种：基本类型和引用类型</p>
 <ul>
-<li>加载完静态资源后通过ajax请求去后台获取数据，数据回来后渲染内容</li>
+<li>基本类型</li>
 </ul>
-<p><img src="/images/4.png!web" alt="加载完静态资源后通过ajax请求去后台获取数据，数据回来后渲染内容"></p>
-<blockquote>
-<p>首屏时间 = 点8 – 点1</p>
-</blockquote>
+<p>保存在内存中的栈中,大小固定,复制其变量时会创建这个值的一个副本。<br>使用typeof区分。<br>这些值是在底层上直接实现的，不是object，所以没有原型，没有构造函数。</p>
 <ul>
-<li>使用后台直出，返回的html已经带上内容了</li>
+<li>引用类型</li>
 </ul>
-<p><img src="/images/5.png!web" alt="使用后台直出，返回的html已经带上内容了"></p>
-<blockquote>
-<p>首屏时间 = 点4 – 点1。</p>
-</blockquote>
-<p><strong>首屏加载如何优化呢？</strong></p>
-<ul>
-<li>传统旧的加载模式</li>
-</ul>
-<p><img src="/images/2.jpg" alt="传统旧模式加载"></p>
-<ul>
-<li>首屏优先加载渲染模式</li>
-</ul>
-<p><img src="/images/3.jpg" alt="首屏优先加载渲染模式"></p>
-<blockquote>
-<p>一、首屏数据拉取逻辑置于顶部，二、首屏渲染css及js逻辑优先内联HTML，三、次屏逻辑延后处理和执行。</p>
-</blockquote>
-  
+<p>引用类型的值是对象,保存在堆内存中。<br>引用类型的变量实际上是一个指针,它保存在栈中,指向堆内存中的对象,复制引用类型变量实际是复制该指针,所以他们都指向同一个对象。<br>用instanceof确定一个值是哪种引用类型。</p>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3>  
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/性能/">性能</a>
+  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
   </div>
 
 
@@ -158,7 +215,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://weibo.com/1832012112/2016/11/20/201611/" data-title="启动优化 | Jin" data-tsina="null" class="share clearfix">
+  <div data-url="http://weibo.com/1832012112/2016/11/24/01/" data-title="JavaScript知识点总结（一） | Jin" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -168,18 +225,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016/11/24/01/" title="JavaScript知识点总结（一）">
+ <a href="/2016/11/25/02/" title="React">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  JavaScript知识点总结（一）</span>
+  React</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2016/10/26/arguments/"  title="JavaScript arguments 对象详解">
+<a href="/2016/11/20/201611/"  title="启动优化">
  <strong>NEXT:</strong><br/> 
- <span>JavaScript arguments 对象详解
+ <span>启动优化
 </span>
 </a>
 </div>
@@ -193,7 +250,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
-  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前端性能优化"><span class="toc-number">1.</span> <span class="toc-text">前端性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#首屏优化"><span class="toc-number">1.1.</span> <span class="toc-text">首屏优化</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#作用域"><span class="toc-number">1.</span> <span class="toc-text">作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量对象"><span class="toc-number">2.</span> <span class="toc-text">变量对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#闭包"><span class="toc-number">3.</span> <span class="toc-text">闭包</span></a></li></ol>
   </div>
 
 <div id="asidepart">
