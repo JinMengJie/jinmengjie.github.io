@@ -46,21 +46,21 @@
 				<h1 class="site-name"><a href="/" title="Jin">Jin</a></h1>
 				<a class="blog-motto">不疯魔不成活.</a>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="javascript:;" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="javascript:;" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
 					<ul>
 					 
-						<li><a href="/">首页</a></li>
+						<li><a href="/">HOME</a></li>
 					
-						<li><a href="/archives">归档</a></li>
+						<li><a href="/archives">FILED</a></li>
 					
 					<li>
 					
                                             <form class="search" action=http://zhannei.baidu.com/cse/search target="_blank">
                                             <label>Search</label>
-                                        <input name="s" type="hidden" value= null ><input type="text" name="q" size="30" placeholder="搜索"><br>
+                                        <input name="s" type="hidden" value= null ><input type="text" name="q" size="30" placeholder="Search"><br>
 					
 					</li>
 				</ul>
@@ -82,7 +82,7 @@
     </p>
   <p class="article-time">
     <time datetime="2016-11-25T07:35:53.000Z" itemprop="datePublished">2016-11-25</time>
-    更新日期:<time datetime="2016-11-29T03:26:09.000Z" itemprop="dateModified">2016-11-29</time>
+    Updated:<time datetime="2016-12-02T01:11:49.000Z" itemprop="dateModified">2016-12-02</time>
     
   </p>
 </header>
@@ -90,12 +90,12 @@
 		
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
-		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#特点"><span class="toc-number">1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React-JSX"><span class="toc-number">2.</span> <span class="toc-text">React JSX</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React-组件"><span class="toc-number">3.</span> <span class="toc-text">React 组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件的生命周期"><span class="toc-number">4.</span> <span class="toc-text">组件的生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ajax"><span class="toc-number">5.</span> <span class="toc-text">Ajax</span></a></li></ol>
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#React基础"><span class="toc-number">1.</span> <span class="toc-text">React基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特点"><span class="toc-number">1.1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-JSX"><span class="toc-number">1.2.</span> <span class="toc-text">React JSX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-组件"><span class="toc-number">1.3.</span> <span class="toc-text">React 组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件的生命周期"><span class="toc-number">1.4.</span> <span class="toc-text">组件的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax"><span class="toc-number">1.5.</span> <span class="toc-text">Ajax</span></a></li></ol></li></ol>
 		</div>
 		
 		<p>React 是一个用于构建用户界面的 JAVASCRIPT 库。<br>React主要用于构建UI，很多人认为 React 是 MVC 中的 V（视图）。<br>React 起源于 Facebook 的内部项目，用来架设 Instagram 的网站，并于 2013 年 5 月开源。<br>React 拥有较高的性能，代码逻辑非常简单，越来越多的人已开始关注和使用它。</p>
-<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ul>
+<h2 id="React基础"><a href="#React基础" class="headerlink" title="React基础"></a>React基础</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
 <li><p>1.声明式设计 −React采用声明范式，可以轻松描述应用。</p>
 </li>
 <li><p>2.高效 −React通过对DOM的模拟，最大限度地减少与DOM的交互。</p>
@@ -112,7 +112,7 @@
 <blockquote>
 <p>react.min.js - React 的核心库<br>react-dom.min.js - 提供与 DOM 相关的功能<br>browser.min.js - 用于将 JSX 语法转为 JavaScript 语法</p>
 </blockquote>
-<h4 id="React-JSX"><a href="#React-JSX" class="headerlink" title="React JSX"></a>React JSX</h4><p>React 使用JSX来代替常规的JavaScript。<br>JSX 是一个看起来很像 XML 的 JavaScript 语法扩展。<br>我们不需要一定使用 JSX，但它有以下优点：</p>
+<h3 id="React-JSX"><a href="#React-JSX" class="headerlink" title="React JSX"></a>React JSX</h3><p>React 使用JSX来代替常规的JavaScript。<br>JSX 是一个看起来很像 XML 的 JavaScript 语法扩展。<br>我们不需要一定使用 JSX，但它有以下优点：</p>
 <ul>
 <li><p>JSX 执行更快，因为它在编译为 JavaScript 代码后进行了优化。</p>
 </li>
@@ -121,7 +121,7 @@
 <li><p>使用 JSX 编写模板更加简单快速。</p>
 </li>
 </ul>
-<h4 id="React-组件"><a href="#React-组件" class="headerlink" title="React 组件"></a>React 组件</h4><blockquote>
+<h3 id="React-组件"><a href="#React-组件" class="headerlink" title="React 组件"></a>React 组件</h3><blockquote>
 <p>注意，原生 HTML 元素名以小写字母开头，而自定义的 React 类名以大写字母开头，比如 HelloMessage 不能写成 helloMessage。除此之外还需要注意组件类只能包含一个顶层标签，否则也会报错。</p>
 </blockquote>
 <ul>
@@ -138,7 +138,7 @@
 </ol>
 </li>
 </ul>
-<h4 id="组件的生命周期"><a href="#组件的生命周期" class="headerlink" title="组件的生命周期"></a>组件的生命周期</h4><ul>
+<h3 id="组件的生命周期"><a href="#组件的生命周期" class="headerlink" title="组件的生命周期"></a>组件的生命周期</h3><ul>
 <li><p>Mounting：已插入真实 DOM</p>
 </li>
 <li><p>Updating：正在被重新渲染</p>
@@ -200,7 +200,7 @@ ReactDOM.render(
 <pre><code class="javascript">style={{opacity: this.state.opacity}}
 </code></pre>
 <p>这是因为 React 组件样式是一个对象，所以第一重大括号表示这是 JavaScript 语法，第二重大括号表示样式对象。</p>
-<h4 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h4><p>组件的数据来源，通常是通过 Ajax 请求从服务器获取，可以使用 componentDidMount 方法设置 Ajax 请求，等到请求成功，再用 this.setState 方法重新渲染 UI</p>
+<h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3><p>组件的数据来源，通常是通过 Ajax 请求从服务器获取，可以使用 componentDidMount 方法设置 Ajax 请求，等到请求成功，再用 this.setState 方法重新渲染 UI</p>
 <pre><code class="javascript">var UserGist = React.createClass({
   getInitialState: function() {
     return {
@@ -321,15 +321,15 @@ ReactDOM.render(
 	
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="javascript:;" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="javascript:;" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
-  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#特点"><span class="toc-number">1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React-JSX"><span class="toc-number">2.</span> <span class="toc-text">React JSX</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React-组件"><span class="toc-number">3.</span> <span class="toc-text">React 组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组件的生命周期"><span class="toc-number">4.</span> <span class="toc-text">组件的生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Ajax"><span class="toc-number">5.</span> <span class="toc-text">Ajax</span></a></li></ol>
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#React基础"><span class="toc-number">1.</span> <span class="toc-text">React基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#特点"><span class="toc-number">1.1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-JSX"><span class="toc-number">1.2.</span> <span class="toc-text">React JSX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#React-组件"><span class="toc-number">1.3.</span> <span class="toc-text">React 组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件的生命周期"><span class="toc-number">1.4.</span> <span class="toc-text">组件的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax"><span class="toc-number">1.5.</span> <span class="toc-text">Ajax</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="javascript:;" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="javascript:;" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 <div id="authorInfo">
 	
@@ -348,7 +348,7 @@ ReactDOM.render(
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
@@ -362,21 +362,20 @@ ReactDOM.render(
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
       <li><a href="https://github.com/jinmengjie" target="_blank" title="coney">GitHub ...</a></li>
-      <li><a href="http://weibo.com/1832012112" target="_blank" title="Hexo">渣小哇 の Weibo.</a></li>
     </ul>
 </div>
 
 
   <div class="rsspart">
-	<a href="atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="atom.xml" target="_blank" title="rss">RSS</a>
 </div>
 
   
   <div class="tagcloudlist">
-    <p class="asidetitle">標簽雲</p>
+    <p class="asidetitle">Tag Cloud</p>
     <div class="tagcloudlist clearfix">
        <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a>
     </div>
