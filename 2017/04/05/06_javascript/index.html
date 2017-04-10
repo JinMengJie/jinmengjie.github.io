@@ -7,22 +7,13 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>性能优化 | Jin</title>
+    <title>escape()、encodeURI()、encodeURIComponent()区别 | Jin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Jinmengjie">
     
-    <meta name="description" content="前端性能优化
-
-加载优化
-
-
-资源加载过程是最为耗时的过程，可能会占到总耗时的80%时间。并发请求数限制
-
-首屏优化
-研究表明用户最满意的网页打开时间在2s以内。
-
-首屏时间，就是指用户在没有滚动时候看到的内容渲染完成并且可以交互的时间。至于加载时间，则是整个页面滚动到底部，所有内容加载完毕并可交互">
+    <meta name="description" content="escape(&amp;#39;http://localhost:4046/2017/04/05/06_javascript/index.html#id=1&amp;#39;)
+    &amp;quot;http%3A//localhost%3A4046/2017/04/05/06_javascript/index.ht">
     
     
     
@@ -84,15 +75,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/11/20/201611_optimize/" title="性能优化" itemprop="url">性能优化</a>
+      <a href="/2017/04/05/06_javascript/" title="escape()、encodeURI()、encodeURIComponent()区别" itemprop="url">escape()、encodeURI()、encodeURIComponent()区别</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://weibo.com/1832012112" title="Jinmengjie">Jinmengjie</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-11-20T06:00:45.000Z" itemprop="datePublished">2016-11-20</time>
-    更新日期:<time datetime="2016-12-03T05:39:26.000Z" itemprop="dateModified">2016-12-03</time>
+    <time datetime="2017-04-05T06:30:53.000Z" itemprop="datePublished">2017-04-05</time>
+    更新日期:<time datetime="2017-04-05T10:49:39.000Z" itemprop="dateModified">2017-04-05</time>
     
   </p>
 </header>
@@ -101,54 +92,28 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前端性能优化"><span class="toc-number">1.</span> <span class="toc-text">前端性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首屏优化"><span class="toc-number">1.1.</span> <span class="toc-text">首屏优化</span></a></li></ol></li></ol>
+		
 		</div>
 		
-		<h2 id="前端性能优化"><a href="#前端性能优化" class="headerlink" title="前端性能优化"></a>前端性能优化</h2><p><img src="/images/1.png" alt="前端性能优化总结"></p>
-<ul>
-<li>加载优化</li>
-</ul>
-<blockquote>
-<p>资源加载过程是最为耗时的过程，可能会占到总耗时的80%时间。并发请求数限制</p>
+		<pre><code>    escape(&#39;http://localhost:4046/2017/04/05/06_javascript/index.html#id=1&#39;)
+    &quot;http%3A//localhost%3A4046/2017/04/05/06_javascript/index.html%23id%3D1&quot;
+    encodeURI(&#39;http://localhost:4046/2017/04/05/06_javascript/index.html#id=1&#39;)
+    &quot;http://localhost:4046/2017/04/05/06_javascript/index.html#id=1&quot;
+    encodeURIComponent(&#39;http://localhost:4046/2017/04/05/06_javascript/index.html#id=1&#39;)
+    &quot;http%3A%2F%2Flocalhost%3A4046%2F2017%2F04%2F05%2F06_javascript%2Findex.html%23id%3D1&quot;
+</code></pre><blockquote>
+<p>escape()对字符串编码，该方法不会对 ASCII 字母和数字进行编码，也不会对下面这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。其他所有的字符都会被转义序列替换。</p>
+<p>encodeURI()该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。该方法的目的是对 URI 进行完整的编码，因此对以下在 URI 中具有特殊含义的 ASCII 标点符号，encodeURI() 函数是不会进行转义的：;/?:@&amp;=+$,#</p>
+<p>encodeURIComponent()该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。其他字符（比如 ：;/?:@&amp;=+$,# 这些用于分隔 URI 组件的标点符号），都是由一个或多个十六进制的转义序列替换的。</p>
 </blockquote>
-<h3 id="首屏优化"><a href="#首屏优化" class="headerlink" title="首屏优化"></a>首屏优化</h3><blockquote>
-<p>研究表明用户最满意的网页打开时间在2s以内。</p>
-</blockquote>
-<p><em>首屏时间，就是指用户在没有滚动时候看到的内容渲染完成并且可以交互的时间。至于加载时间，则是整个页面滚动到底部，所有内容加载完毕并可交互的时间。</em></p>
-<p><strong>如何获取首屏时间？</strong></p>
-<ul>
-<li>加载完静态资源后通过ajax请求去后台获取数据，数据回来后渲染内容</li>
-</ul>
-<p><img src="/images/4.png!web" alt="加载完静态资源后通过ajax请求去后台获取数据，数据回来后渲染内容"></p>
-<blockquote>
-<p>首屏时间 = 点8 – 点1</p>
-</blockquote>
-<ul>
-<li>使用后台直出，返回的html已经带上内容了</li>
-</ul>
-<p><img src="/images/5.png!web" alt="使用后台直出，返回的html已经带上内容了"></p>
-<blockquote>
-<p>首屏时间 = 点4 – 点1。</p>
-</blockquote>
-<p><strong>首屏加载如何优化呢？</strong></p>
-<ul>
-<li>传统旧的加载模式</li>
-</ul>
-<p><img src="/images/2.jpg" alt="传统旧模式加载"></p>
-<ul>
-<li>首屏优先加载渲染模式</li>
-</ul>
-<p><img src="/images/3.jpg" alt="首屏优先加载渲染模式"></p>
-<blockquote>
-<p>一、首屏数据拉取逻辑置于顶部，二、首屏渲染css及js逻辑优先内联HTML，三、次屏逻辑延后处理和执行。</p>
-</blockquote>
+<p>请注意 encodeURIComponent() 函数 与 encodeURI() 函数的区别之处，前者假定它的参数是 URI 的一部分（比如协议、主机名、路径或查询字符串）。因此 encodeURIComponent() 函数将转义用于分隔 URI 各个部分的标点符号。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/性能/">性能</a>
+  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
   </div>
 
 
@@ -156,7 +121,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://weibo.com/1832012112/2016/11/20/201611_optimize/" data-title="性能优化 | Jin" data-tsina="null" class="share clearfix">
+  <div data-url="http://weibo.com/1832012112/2017/04/05/06_javascript/" data-title="escape()、encodeURI()、encodeURIComponent()区别 | Jin" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -165,19 +130,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/11/24/01_javascript/" title="JavaScript知识点总结（一）">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  JavaScript知识点总结（一）</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016/10/26/arguments/"  title="JavaScript arguments 对象详解">
+<a href="/2017/04/01/05_js_array/"  title="JavaScript基础之Array">
  <strong>NEXT:</strong><br/> 
- <span>JavaScript arguments 对象详解
+ <span>JavaScript基础之Array
 </span>
 </a>
 </div>
@@ -191,7 +148,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前端性能优化"><span class="toc-number">1.</span> <span class="toc-text">前端性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#首屏优化"><span class="toc-number">1.1.</span> <span class="toc-text">首屏优化</span></a></li></ol></li></ol>
+  
   </div>
 
 <div id="asidepart">
