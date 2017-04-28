@@ -7,13 +7,13 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>escape、encodeURI、encodeURIComponent区别 | Jin</title>
+    <title>个人简历 | Jin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Jinmengjie">
     
-    <meta name="description" content="escape(&amp;#39;http://localhost:4046/2017/04/05/06_javascript/index.html#id=1&amp;#39;)
-    &amp;quot;http%3A//localhost%3A4046/2017/04/05/06_javascript/index.ht">
+    <meta name="description" content="个人信息
+金**/女/1989手机 ： 135****9395邮箱 ： jin****@163.com教育经历 ：    2008.09 - 2012.06 中南大学/计算机科学与技术/本科工作经历 ：    2013.09 - 至今 平安科技（深圳）有限公司    2012.07 - 2013.0">
     
     
     
@@ -75,15 +75,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2017/04/05/06_javascript/" title="escape、encodeURI、encodeURIComponent区别" itemprop="url">escape、encodeURI、encodeURIComponent区别</a>
+      <a href="/2017/04/18/resume/" title="个人简历" itemprop="url">个人简历</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://weibo.com/1832012112" title="Jinmengjie">Jinmengjie</a>
     </p>
   <p class="article-time">
-    <time datetime="2017-04-05T06:30:53.000Z" itemprop="datePublished">2017-04-05</time>
-    更新日期:<time datetime="2017-04-24T09:22:55.000Z" itemprop="dateModified">2017-04-24</time>
+    <time datetime="2017-04-18T06:00:45.000Z" itemprop="datePublished">2017-04-18</time>
+    更新日期:<time datetime="2017-04-19T02:49:17.000Z" itemprop="dateModified">2017-04-19</time>
     
   </p>
 </header>
@@ -92,28 +92,53 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#个人信息"><span class="toc-number">1.</span> <span class="toc-text">个人信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目经验"><span class="toc-number">2.</span> <span class="toc-text">项目经验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#个人技能"><span class="toc-number">3.</span> <span class="toc-text">个人技能</span></a></li></ol>
 		</div>
 		
-		<pre><code>    escape(&#39;http://localhost:4046/2017/04/05/06_javascript/index.html#id=1&#39;)
-    &quot;http%3A//localhost%3A4046/2017/04/05/06_javascript/index.html%23id%3D1&quot;
-    encodeURI(&#39;http://localhost:4046/2017/04/05/06_javascript/index.html#id=1&#39;)
-    &quot;http://localhost:4046/2017/04/05/06_javascript/index.html#id=1&quot;
-    encodeURIComponent(&#39;http://localhost:4046/2017/04/05/06_javascript/index.html#id=1&#39;)
-    &quot;http%3A%2F%2Flocalhost%3A4046%2F2017%2F04%2F05%2F06_javascript%2Findex.html%23id%3D1&quot;
-</code></pre><blockquote>
-<p>escape()对字符串编码，该方法不会对 ASCII 字母和数字进行编码，也不会对下面这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。其他所有的字符都会被转义序列替换。</p>
-<p>encodeURI()该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。该方法的目的是对 URI 进行完整的编码，因此对以下在 URI 中具有特殊含义的 ASCII 标点符号，encodeURI() 函数是不会进行转义的：;/?:@&amp;=+$,#</p>
-<p>encodeURIComponent()该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。其他字符（比如 ：;/?:@&amp;=+$,# 这些用于分隔 URI 组件的标点符号），都是由一个或多个十六进制的转义序列替换的。</p>
+		<h4 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h4><hr>
+<p><code>金**/女/1989</code><br>手机 ： <code>135****9395</code><br>邮箱 ： <code>jin****@163.com</code><br>教育经历 ：<br>    2008.09 - 2012.06 中南大学/计算机科学与技术/本科<br>工作经历 ：<br>    2013.09 - 至今 平安科技（深圳）有限公司<br>    2012.07 - 2013.08 北京灵图软件有限公司<br>期望工作领域 ：<br>    Web前端</p>
+<h4 id="项目经验"><a href="#项目经验" class="headerlink" title="项目经验"></a>项目经验</h4><hr>
+<blockquote>
+<p>平安口袋银行 (2016.10-至今)</p>
 </blockquote>
-<p>请注意 encodeURIComponent() 函数 与 encodeURI() 函数的区别之处，前者假定它的参数是 URI 的一部分（比如协议、主机名、路径或查询字符串）。因此 encodeURIComponent() 函数将转义用于分隔 URI 各个部分的标点符号。</p>
+<pre><code>- 口袋银行APP 3.0项目，是基于我们团队Aladdin平台重构平安口袋银行的项目。
+- 负责口袋银行登录模块开发，完成用户体系迁徙改造。对口袋APP内部、移动端浏览器及微信三个平台提供统一登录组件。
+- 负责多个2.0模块到3.0架构的适配改造工作。
+- 参与3.0架构的业务层级框架制定。
+</code></pre><blockquote>
+<p>Aladdin打包平台 (2016.07-2018.09)</p>
+</blockquote>
+<pre><code>- 打包平台是一个应用及资源发布审核及管理的平台。
+- 使用vue、webpack、node等技术。
+- 参与平台资源包发布与审核流程及接口开发。
+- 打包平台是团队内的创新项目。
+</code></pre><blockquote>
+<p>平安房交所RO项目 (2016.03-2016.06)</p>
+</blockquote>
+<pre><code>- RO项目是给业务员提供的一款移动办公APP，含括上下班打卡、任务分配、任务处理、订单跟踪与文件上传等功能。
+- RO项目开发负责人，负责需求接入、进度跟踪、团队管理等。
+- 参与架构制定、资源更新方案确认等。
+</code></pre><blockquote>
+<p>平安普惠金融项目 (2015.06-2016.06)</p>
+</blockquote>
+<pre><code>- 平安普惠金融项目，参与宅E贷、i贷、应急钱包、iPOS贷等得开发任务。
+- 从平安普惠APP启动初期开始参与10+次APP版本迭代。
+- iPOS贷项目开发负责人，负责iPOS从启动开始到6期版本迭代，负责需求接入、框架制定、项目进度及开发团队日常管理。负责期间iPOS贷从无到放款两千多万。
+- 参与平安普惠APP架构设计与资源更新方案制定。
+- APP用户量2000W+，2017年3月末贷款额超2000亿。
+</code></pre><blockquote>
+<p>(2013.09-2015.05)</p>
+</blockquote>
+<pre><code>平安天下通、问理财、财富宝等项目
+</code></pre><h4 id="个人技能"><a href="#个人技能" class="headerlink" title="个人技能"></a>个人技能</h4><hr>
+<p><img src="/images/resume1.png" alt="技能树"></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/JavaScript/">JavaScript</a>
+  <span></span> <a href="/tags/信息/">信息</a>
   </div>
 
 
@@ -121,7 +146,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://weibo.com/1832012112/2017/04/05/06_javascript/" data-title="escape、encodeURI、encodeURIComponent区别 | Jin" data-tsina="null" class="share clearfix">
+  <div data-url="http://weibo.com/1832012112/2017/04/18/resume/" data-title="个人简历 | Jin" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -131,18 +156,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2017/04/18/resume/" title="个人简历">
+ <a href="/2017/04/19/07/" title="JavaScript高级程序设计-阅读笔记1">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  个人简历</span>
+  JavaScript高级程序设计-阅读笔记1</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2017/04/01/05_js_array/"  title="JavaScript基础之Array">
+<a href="/2017/04/05/06_javascript/"  title="escape、encodeURI、encodeURIComponent区别">
  <strong>NEXT:</strong><br/> 
- <span>JavaScript基础之Array
+ <span>escape、encodeURI、encodeURIComponent区别
 </span>
 </a>
 </div>
@@ -156,7 +181,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#个人信息"><span class="toc-number">1.</span> <span class="toc-text">个人信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#项目经验"><span class="toc-number">2.</span> <span class="toc-text">项目经验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#个人技能"><span class="toc-number">3.</span> <span class="toc-text">个人技能</span></a></li></ol>
   </div>
 
 <div id="asidepart">

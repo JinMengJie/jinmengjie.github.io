@@ -72,10 +72,86 @@
 
   <section class="post" itemscope itemprop="blogPost">
   
-    <a href="/2017/04/05/06_javascript/" title="escape()、encodeURI()、encodeURIComponent()区别" itemprop="url">
+    <a href="/2017/04/28/08_this/" title="【转】JavaScript运行时环境" itemprop="url">
+  
+      <time datetime="2017-04-28T02:23:45.000Z" itemprop="datePublished">2017-04-28</time>
+    <h1 itemprop="name">【转】JavaScript运行时环境</h1>
+    
+     
+           <p itemprop="description" >this
+this 指调用函数的那个对象
+
+纯粹函数调用通常的函数调用属于全局性调用，this指代全局对象Global。
+var x = 1;
+function test() {
+    this.x = 0;
+}
+test(); 
+console.log(this.x); //</p>
+        
+    
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/04/28/09_OOP/" title="【转】JavaScript面向对象之继承" itemprop="url">
+  
+      <time datetime="2017-04-28T02:23:45.000Z" itemprop="datePublished">2017-04-28</time>
+    <h1 itemprop="name">【转】JavaScript面向对象之继承</h1>
+    
+     
+           <p itemprop="description" >继承的方法现在有一个“动物”对象的构造函数
+function Animal() {
+    this.species = &amp;quot;动物&amp;quot;;
+}
+
+还有一个“猫”对象的构造函数
+function Cat(name, color) {
+    this.name = n</p>
+        
+    
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/04/19/07/" title="JavaScript高级程序设计-阅读笔记1" itemprop="url">
+  
+      <time datetime="2017-04-19T03:00:45.000Z" itemprop="datePublished">2017-04-19</time>
+    <h1 itemprop="name">JavaScript高级程序设计-阅读笔记1</h1>
+    
+     
+           <p itemprop="description" >&amp;lt; script &amp;gt;元素
+async: 可选，立即下载脚本文件，但是不妨碍其他操作，只对外部脚本文件有效，在页面load事件前执行，但是可能在DOMContentLoaded之前或者之后执行
+charset: 可选，表示通过src属性指定的代码的字符集
+defer: </p>
+        
+    
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/04/18/resume/" title="个人简历" itemprop="url">
+  
+      <time datetime="2017-04-18T06:00:45.000Z" itemprop="datePublished">2017-04-18</time>
+    <h1 itemprop="name">个人简历</h1>
+    
+     
+           <p itemprop="description" >个人信息
+金**/女/1989手机 ： 135****9395邮箱 ： jin****@163.com教育经历 ：    2008.09 - 2012.06 中南大学/计算机科学与技术/本科工作经历 ：    2013.09 - 至今 平安科技（深圳）有限公司    2012.0</p>
+        
+    
+  </a>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/2017/04/05/06_javascript/" title="escape、encodeURI、encodeURIComponent区别" itemprop="url">
   
       <time datetime="2017-04-05T06:30:53.000Z" itemprop="datePublished">2017-04-05</time>
-    <h1 itemprop="name">escape()、encodeURI()、encodeURIComponent()区别</h1>
+    <h1 itemprop="name">escape、encodeURI、encodeURIComponent区别</h1>
     
      
            <p itemprop="description" >escape(&amp;#39;http://localhost:4046/2017/04/05/06_javascript/index.html#id=1&amp;#39;)
@@ -204,62 +280,10 @@ if (true)</p>
   </a>
 </section>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/11/20/201611_optimize/" title="性能优化" itemprop="url">
-  
-      <time datetime="2016-11-20T06:00:45.000Z" itemprop="datePublished">2016-11-20</time>
-    <h1 itemprop="name">性能优化</h1>
-    
-     
-           <p itemprop="description" >前端性能优化
 
-加载优化
-
-
-资源加载过程是最为耗时的过程，可能会占到总耗时的80%时间。并发请求数限制
-
-首屏优化
-研究表明用户最满意的网页打开时间在2s以内。
-
-首屏时间，就是指用户在没有滚动时候看到的内容渲染完成并且可以交互的时间。至于加载时间，则是整个页面滚动到底部，所有</p>
-        
-    
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/10/26/arguments/" title="JavaScript arguments 对象详解" itemprop="url">
-  
-      <time datetime="2016-10-26T06:35:53.000Z" itemprop="datePublished">2016-10-26</time>
-    <h1 itemprop="name">JavaScript arguments 对象详解</h1>
-    
-     
-           <p itemprop="description" >JavaScript中每个函数内都能访问一个特别的变量arguments，MDN上给arguments的解释是：
-
-arguments是一个类数组对象。代表传递给一个function的参数列表。
-
-1. arguments lengtharguments 是个类数组对象，其包含一</p>
-        
-    
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2016/08/30/hello-world/" title="Hello World" itemprop="url">
-  
-      <time datetime="2016-08-30T08:07:01.000Z" itemprop="datePublished">2016-08-30</time>
-    <h1 itemprop="name">Hello World</h1>
-    
-     
-           <p itemprop="description" >Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the </p>
-        
-    
-  </a>
-</section>
-
+  <nav id="page-nav" class="clearfix">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </div>
       <div class="openaside"><a class="navbutton" href="javascript:;" title="显示侧边栏"></a></div>
@@ -289,9 +313,11 @@ arguments是一个类数组对象。代表传递给一个function的参数列表
 		
 			<li><a href="/tags/Git/" title="Git">Git<sup>1</sup></a></li>
 		
-			<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>5</sup></a></li>
+			<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>8</sup></a></li>
 		
 			<li><a href="/tags/react/" title="react">react<sup>1</sup></a></li>
+		
+			<li><a href="/tags/信息/" title="信息">信息<sup>1</sup></a></li>
 		
 			<li><a href="/tags/性能/" title="性能">性能<sup>1</sup></a></li>
 		
@@ -316,7 +342,7 @@ arguments是一个类数组对象。代表传递给一个function的参数列表
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a>
+       <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/信息/" style="font-size: 10px;">信息</a> <a href="/tags/性能/" style="font-size: 10px;">性能</a>
     </div>
   </div>
 
